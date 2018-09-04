@@ -95,3 +95,6 @@ vendor/bundle
 # direnv
 .envrc
 
+# Ignore idea.
+.idea
+
