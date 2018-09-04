@@ -1,5 +1,4 @@
 # Tutorial
-Tutorial iOS app architecture
 
 ![](https://img.shields.io/badge/Xcode-9.4%2B-blue.svg)
 ![](https://img.shields.io/badge/iOS-10.0%2B-blue.svg)
