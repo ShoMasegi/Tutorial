@@ -36,7 +36,6 @@
 		36D27272213C3D6E00AF0ACE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27271213C3D6E00AF0ACE /* Repository.swift */; };
 		36D27275213C4D9A00AF0ACE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27274213C4D9A00AF0ACE /* EventsViewController.swift */; };
 		36D27277213C54CE00AF0ACE /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27276213C54CE00AF0ACE /* ViewModelType.swift */; };
-		36D2727A213CDC4100AF0ACE /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D27278213CDC4100AF0ACE /* RxDataSources.framework */; };
 		36D2727B213CDC4100AF0ACE /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D27279213CDC4100AF0ACE /* Differentiator.framework */; };
 		36D2727D213CDD6600AF0ACE /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2727C213CDD6600AF0ACE /* EventsViewModel.swift */; };
 		36EC1E7421382027007CE7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E7321382027007CE7E3 /* AppDelegate.swift */; };
@@ -84,7 +83,6 @@
 		36D27271213C3D6E00AF0ACE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		36D27274213C4D9A00AF0ACE /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		36D27276213C54CE00AF0ACE /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		36D27278213CDC4100AF0ACE /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		36D27279213CDC4100AF0ACE /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		36D2727C213CDD6600AF0ACE /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		36EC1E7021382027007CE7E3 /* Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36D2727A213CDC4100AF0ACE /* RxDataSources.framework in Frameworks */,
 				36D2727B213CDC4100AF0ACE /* Differentiator.framework in Frameworks */,
 				36EC1E8F213828FE007CE7E3 /* RxSwift.framework in Frameworks */,
 				36D27250213A139700AF0ACE /* RxMoya.framework in Frameworks */,
@@ -304,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				36D27279213CDC4100AF0ACE /* Differentiator.framework */,
-				36D27278213CDC4100AF0ACE /* RxDataSources.framework */,
 				36D2724D213A139600AF0ACE /* Nuke.framework */,
 				36D2724E213A139700AF0ACE /* ReactiveMoya.framework */,
 				36D2724B213A139600AF0ACE /* RxMoya.framework */,
@@ -408,7 +404,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/Differentiator.framework",
 			);
 			name = "Run Script";
@@ -608,6 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JGQ4YAN3V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -630,6 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JGQ4YAN3V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
