@@ -210,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				36D27256213A6CA300AF0ACE /* UseCaseProvider.swift */,
-				36D27263213BF35900AF0ACE /* SplashUseCase.swift */,
 				36D27258213A6CAB00AF0ACE /* UseCase */,
 			);
 			path = NetworkPlatform;
@@ -220,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				36D27259213A6CC700AF0ACE /* EventsUseCase.swift */,
+				36D27263213BF35900AF0ACE /* SplashUseCase.swift */,
 				363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */,
 			);
 			path = UseCase;
