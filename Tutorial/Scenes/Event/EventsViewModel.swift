@@ -5,9 +5,11 @@ import RxSwift
 final class EventsViewModel {
 
     private let useCase: EventsUseCase
+    private let navigator: MainNavigator
     private let bag = DisposeBag()
-    init(useCase: EventsUseCase) {
+    init(useCase: EventsUseCase, navigator: MainNavigator) {
         self.useCase = useCase
+        self.navigator = navigator
     }
 
     private let elements = Variable<[Event]>([])
@@ -26,6 +28,7 @@ extension EventsViewModel {
         let refreshing: Driver<Bool>
         let loading: Driver<Bool>
         let events: Driver<[Event]>
+        let isNavigated: Driver<Bool>
         let error: Driver<Error>
     }
 }
@@ -63,6 +66,11 @@ extension EventsViewModel: ViewModelType {
                             activityIndicator: loadingActivityIndicator,
                             errorTracker: errorTracker)
                 }
+        let isNavigated = input.modelSelected
+                .do(onNext: { model in
+                    self.navigator.toRepository(repo: model.repo)
+                })
+                .map { _ in true }
         Driver
                 .merge(refreshResponse, nextPageResponse)
                 .drive(onNext: {
@@ -72,6 +80,7 @@ extension EventsViewModel: ViewModelType {
         return Output(refreshing: refreshing,
                 loading: loading,
                 events: elements.asDriver(),
+                isNavigated: isNavigated,
                 error: errors)
     }
 

@@ -5,11 +5,14 @@ import SnapKit
 
 class EventsViewController: UIViewController {
 
-    private let viewModel: EventsViewModel
+    private lazy var viewModel: EventsViewModel = {
+        let provider = Application.shared.defaultUseCaseProvider()
+        let navigator = MainNavigator(provider: provider, navigationController: self.navigationController)
+        return EventsViewModel(useCase: provider.makeEventsUseCase(), navigator: navigator)
+    }()
     private let bag = DisposeBag()
 
     init() {
-        viewModel = EventsViewModel(useCase: Application.shared.defaultUseCaseProvider().makeEventsUseCase())
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -78,6 +81,7 @@ class EventsViewController: UIViewController {
                 self.refreshControl.endRefreshing()
             }
         }).disposed(by: bag)
+        output.isNavigated.drive().disposed(by: bag)
         output.error.drive(onNext: { error in
             print(error.localizedDescription)
         }).disposed(by: bag)
