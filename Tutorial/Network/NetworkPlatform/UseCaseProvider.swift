@@ -18,4 +18,8 @@ public final class UseCaseProvider {
     func makeEventsUseCase() -> EventsUseCase {
         return  EventsUseCase(network: networkProvider)
     }
+
+    func makeRepositoryUseCase() -> RepositoryUseCase {
+        return RepositoryUseCase(network: networkProvider)
+    }
 }

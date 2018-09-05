@@ -13,6 +13,9 @@
 		3635E56B213D116200C10577 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635E56A213D116200C10577 /* Observable+Extension.swift */; };
 		3636B56F213D87E0007AD178 /* UIScroll+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636B56E213D87E0007AD178 /* UIScroll+Rx.swift */; };
 		3636B571213E398F007AD178 /* UIScroll+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636B570213E398F007AD178 /* UIScroll+Extension.swift */; };
+		363F86E1213EA8EC00C160A6 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E0213EA8EC00C160A6 /* RepositoryViewController.swift */; };
+		363F86E3213EA90000C160A6 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */; };
+		363F86E5213EA93D00C160A6 /* RepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */; };
 		36D27241213A051A00AF0ACE /* FadeTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27240213A051A00AF0ACE /* FadeTransitionable.swift */; };
 		36D27243213A058800AF0ACE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27242213A058800AF0ACE /* Reusable.swift */; };
 		36D27246213A05C500AF0ACE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27245213A05C500AF0ACE /* UITableView+Extensions.swift */; };
@@ -60,6 +63,9 @@
 		3635E56A213D116200C10577 /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		3636B56E213D87E0007AD178 /* UIScroll+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScroll+Rx.swift"; sourceTree = "<group>"; };
 		3636B570213E398F007AD178 /* UIScroll+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScroll+Extension.swift"; sourceTree = "<group>"; };
+		363F86E0213EA8EC00C160A6 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryUseCase.swift; sourceTree = "<group>"; };
 		36D27240213A051A00AF0ACE /* FadeTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransitionable.swift; sourceTree = "<group>"; };
 		36D27242213A058800AF0ACE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		36D27245213A05C500AF0ACE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -137,6 +143,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		363F86DF213EA8BF00C160A6 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				363F86E0213EA8EC00C160A6 /* RepositoryViewController.swift */,
+				363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
 		36D2723C2139F07000AF0ACE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +159,7 @@
 				36D2725E213BEFD600AF0ACE /* Splash */,
 				36D2725B213A740200AF0ACE /* Lock */,
 				36D27273213C4D8700AF0ACE /* Event */,
+				363F86DF213EA8BF00C160A6 /* Repo */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -204,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				36D27259213A6CC700AF0ACE /* EventsUseCase.swift */,
+				363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -440,6 +457,7 @@
 			files = (
 				3635E564213D064400C10577 /* EventTableViewCell.swift in Sources */,
 				36D27277213C54CE00AF0ACE /* ViewModelType.swift in Sources */,
+				363F86E3213EA90000C160A6 /* RepositoryViewModel.swift in Sources */,
 				36EC1E97213830D1007CE7E3 /* Application.swift in Sources */,
 				3636B56F213D87E0007AD178 /* UIScroll+Rx.swift in Sources */,
 				36D2725D213A741500AF0ACE /* LockViewController.swift in Sources */,
@@ -449,8 +467,10 @@
 				36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */,
 				36D27266213C054700AF0ACE /* Response.swift in Sources */,
 				36D27260213BEFF700AF0ACE /* SplashViewController.swift in Sources */,
+				363F86E1213EA8EC00C160A6 /* RepositoryViewController.swift in Sources */,
 				36D27272213C3D6E00AF0ACE /* Repository.swift in Sources */,
 				36D2725A213A6CC700AF0ACE /* EventsUseCase.swift in Sources */,
+				363F86E5213EA93D00C160A6 /* RepositoryUseCase.swift in Sources */,
 				36D2727D213CDD6600AF0ACE /* EventsViewModel.swift in Sources */,
 				3636B571213E398F007AD178 /* UIScroll+Extension.swift in Sources */,
 				36D27241213A051A00AF0ACE /* FadeTransitionable.swift in Sources */,
