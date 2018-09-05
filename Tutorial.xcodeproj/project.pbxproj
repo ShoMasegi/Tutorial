@@ -17,6 +17,7 @@
 		363F86E3213EA90000C160A6 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */; };
 		363F86E5213EA93D00C160A6 /* RepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */; };
 		363F86E721401AA100C160A6 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E621401AA100C160A6 /* MainNavigator.swift */; };
+		363F86E921402F1B00C160A6 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363F86E821402F1B00C160A6 /* RxDataSources.framework */; };
 		36D27241213A051A00AF0ACE /* FadeTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27240213A051A00AF0ACE /* FadeTransitionable.swift */; };
 		36D27243213A058800AF0ACE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27242213A058800AF0ACE /* Reusable.swift */; };
 		36D27246213A05C500AF0ACE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27245213A05C500AF0ACE /* UITableView+Extensions.swift */; };
@@ -68,6 +69,7 @@
 		363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryUseCase.swift; sourceTree = "<group>"; };
 		363F86E621401AA100C160A6 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		363F86E821402F1B00C160A6 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		36D27240213A051A00AF0ACE /* FadeTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransitionable.swift; sourceTree = "<group>"; };
 		36D27242213A058800AF0ACE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		36D27245213A05C500AF0ACE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363F86E921402F1B00C160A6 /* RxDataSources.framework in Frameworks */,
 				36D2727B213CDC4100AF0ACE /* Differentiator.framework in Frameworks */,
 				36EC1E8F213828FE007CE7E3 /* RxSwift.framework in Frameworks */,
 				36D27250213A139700AF0ACE /* RxMoya.framework in Frameworks */,
@@ -320,6 +323,7 @@
 		C70C84C69F5CCE169F80E219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				363F86E821402F1B00C160A6 /* RxDataSources.framework */,
 				36D27279213CDC4100AF0ACE /* Differentiator.framework */,
 				36D2724D213A139600AF0ACE /* Nuke.framework */,
 				36D2724E213A139700AF0ACE /* ReactiveMoya.framework */,
@@ -425,6 +429,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)//Carthage/Build/iOS/RxDataSources.framework",
 			);
 			name = "Run Script";
 			outputPaths = (

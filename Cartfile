@@ -4,6 +4,9 @@ github "Moya/Moya" "xcode_9.3"
 # architecture
 github "ReactiveX/RxSwift" ~> 4.0
 
+# rxswift utilities
+github "RxSwiftCommunity/RxDataSources" ~> 3.0
+
 # image
 github "kean/Nuke" ~> 7.0
 
