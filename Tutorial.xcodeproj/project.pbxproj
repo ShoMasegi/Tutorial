@@ -54,6 +54,7 @@
 		36EC1E93213828FE007CE7E3 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EC1E8B213828FE007CE7E3 /* Moya.framework */; };
 		36EC1E97213830D1007CE7E3 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E96213830D1007CE7E3 /* Application.swift */; };
 		36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E9821383130007CE7E3 /* RootViewController.swift */; };
+		36EDE4BB2143A8D700A07285 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */; };
 		858BC5C0BD6F39CF41D36B36 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		36EC1E8C213828FE007CE7E3 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		36EC1E96213830D1007CE7E3 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		36EC1E9821383130007CE7E3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 				3635E56A213D116200C10577 /* Observable+Extension.swift */,
 				3636B56E213D87E0007AD178 /* UIScroll+Rx.swift */,
 				3636B570213E398F007AD178 /* UIScroll+Extension.swift */,
+				36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				36EC1E7421382027007CE7E3 /* AppDelegate.swift in Sources */,
 				36D27243213A058800AF0ACE /* Reusable.swift in Sources */,
 				36D27268213C0C7B00AF0ACE /* APIError.swift in Sources */,
+				36EDE4BB2143A8D700A07285 /* UIColor+Extension.swift in Sources */,
 				36D27257213A6CA300AF0ACE /* UseCaseProvider.swift in Sources */,
 				36D27248213A0A3C00AF0ACE /* API.swift in Sources */,
 				363F86E721401AA100C160A6 /* MainNavigator.swift in Sources */,
