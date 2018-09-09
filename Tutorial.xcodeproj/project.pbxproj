@@ -18,6 +18,7 @@
 		363F86E5213EA93D00C160A6 /* RepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */; };
 		363F86E721401AA100C160A6 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86E621401AA100C160A6 /* MainNavigator.swift */; };
 		363F86E921402F1B00C160A6 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363F86E821402F1B00C160A6 /* RxDataSources.framework */; };
+		363F86EB21402FBE00C160A6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F86EA21402FBE00C160A6 /* UIViewController+Extensions.swift */; };
 		36D27241213A051A00AF0ACE /* FadeTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27240213A051A00AF0ACE /* FadeTransitionable.swift */; };
 		36D27243213A058800AF0ACE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27242213A058800AF0ACE /* Reusable.swift */; };
 		36D27246213A05C500AF0ACE /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27245213A05C500AF0ACE /* UITableView+Extensions.swift */; };
@@ -54,7 +55,12 @@
 		36EC1E93213828FE007CE7E3 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EC1E8B213828FE007CE7E3 /* Moya.framework */; };
 		36EC1E97213830D1007CE7E3 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E96213830D1007CE7E3 /* Application.swift */; };
 		36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E9821383130007CE7E3 /* RootViewController.swift */; };
+		36EDE4B121439A1300A07285 /* UserCoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B021439A1300A07285 /* UserCoverTableViewCell.swift */; };
+		36EDE4B521439BFA00A07285 /* ReadMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B421439BFA00A07285 /* ReadMeTableViewCell.swift */; };
+		36EDE4B721439C2000A07285 /* RepositoryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B621439C2000A07285 /* RepositoryInfoTableViewCell.swift */; };
 		36EDE4BB2143A8D700A07285 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */; };
+		36EDE4BD2144234700A07285 /* RepositoryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */; };
+		36EDE4BF214446C200A07285 /* ImageLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BE214446C200A07285 /* ImageLabelCell.swift */; };
 		858BC5C0BD6F39CF41D36B36 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +77,7 @@
 		363F86E4213EA93D00C160A6 /* RepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryUseCase.swift; sourceTree = "<group>"; };
 		363F86E621401AA100C160A6 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
 		363F86E821402F1B00C160A6 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		363F86EA21402FBE00C160A6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		36D27240213A051A00AF0ACE /* FadeTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransitionable.swift; sourceTree = "<group>"; };
 		36D27242213A058800AF0ACE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		36D27245213A05C500AF0ACE /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -111,7 +118,12 @@
 		36EC1E8C213828FE007CE7E3 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		36EC1E96213830D1007CE7E3 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		36EC1E9821383130007CE7E3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		36EDE4B021439A1300A07285 /* UserCoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoverTableViewCell.swift; sourceTree = "<group>"; };
+		36EDE4B421439BFA00A07285 /* ReadMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeTableViewCell.swift; sourceTree = "<group>"; };
+		36EDE4B621439C2000A07285 /* RepositoryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoTableViewCell.swift; sourceTree = "<group>"; };
 		36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoCell.swift; sourceTree = "<group>"; };
+		36EDE4BE214446C200A07285 /* ImageLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelCell.swift; sourceTree = "<group>"; };
 		BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -155,6 +167,11 @@
 			children = (
 				363F86E0213EA8EC00C160A6 /* RepositoryViewController.swift */,
 				363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */,
+				36EDE4B021439A1300A07285 /* UserCoverTableViewCell.swift */,
+				36EDE4B421439BFA00A07285 /* ReadMeTableViewCell.swift */,
+				36EDE4B621439C2000A07285 /* RepositoryInfoTableViewCell.swift */,
+				36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */,
+				36EDE4BE214446C200A07285 /* ImageLabelCell.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -210,6 +227,7 @@
 				3635E56A213D116200C10577 /* Observable+Extension.swift */,
 				3636B56E213D87E0007AD178 /* UIScroll+Rx.swift */,
 				3636B570213E398F007AD178 /* UIScroll+Extension.swift */,
+				363F86EA21402FBE00C160A6 /* UIViewController+Extensions.swift */,
 				36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
@@ -471,13 +489,19 @@
 				363F86E3213EA90000C160A6 /* RepositoryViewModel.swift in Sources */,
 				36EC1E97213830D1007CE7E3 /* Application.swift in Sources */,
 				3636B56F213D87E0007AD178 /* UIScroll+Rx.swift in Sources */,
+				36EDE4B521439BFA00A07285 /* ReadMeTableViewCell.swift in Sources */,
 				36D2725D213A741500AF0ACE /* LockViewController.swift in Sources */,
+				36EDE4B721439C2000A07285 /* RepositoryInfoTableViewCell.swift in Sources */,
+				36EDE4B121439A1300A07285 /* UserCoverTableViewCell.swift in Sources */,
 				36D27264213BF35900AF0ACE /* SplashUseCase.swift in Sources */,
 				3635E569213D0CE000C10577 /* ErrorTracker.swift in Sources */,
 				3635E56B213D116200C10577 /* Observable+Extension.swift in Sources */,
 				36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */,
 				36D27266213C054700AF0ACE /* Response.swift in Sources */,
+				36EDE4BF214446C200A07285 /* ImageLabelCell.swift in Sources */,
 				36D27260213BEFF700AF0ACE /* SplashViewController.swift in Sources */,
+				36EDE4BD2144234700A07285 /* RepositoryInfoCell.swift in Sources */,
+				363F86EB21402FBE00C160A6 /* UIViewController+Extensions.swift in Sources */,
 				363F86E1213EA8EC00C160A6 /* RepositoryViewController.swift in Sources */,
 				36D27272213C3D6E00AF0ACE /* Repository.swift in Sources */,
 				36D2725A213A6CC700AF0ACE /* EventsUseCase.swift in Sources */,

@@ -13,6 +13,7 @@ class RepositoryViewController: UIViewController {
         self.viewModel = viewModel
         self.repo = repo
         super.init(nibName: nil, bundle: nil)
+        hideBackButtonTitle()
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError() }
@@ -21,6 +22,7 @@ class RepositoryViewController: UIViewController {
         super.viewDidLoad()
         self.title = repo?.name
         self.setupSubviews()
+        self.bind()
     }
 
     private enum SectionType {
@@ -36,6 +38,12 @@ class RepositoryViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
+        tableView.backgroundColor = .t_grey
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UserCoverTableViewCell.self)
+        tableView.register(RepositoryInfoTableViewCell.self)
+        tableView.register(ReadMeTableViewCell.self)
         return tableView
     }()
 
@@ -59,8 +67,62 @@ class RepositoryViewController: UIViewController {
             guard let `self` = self else { return }
             self.title = repository?.name
             self.repo = repository
+            self.tableView.reloadData()
         }).disposed(by: bag)
     }
 }
 
+extension RepositoryViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch sections[indexPath.section] {
+        case .cover:
+            let cell: UserCoverTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.repo = self.repo
+            return cell
+        case .info:
+            let cell: RepositoryInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.repo = self.repo
+            return cell
+        case .readme:
+            let cell: ReadMeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            return cell
+        }
+    }
+}
+
+extension RepositoryViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNonzeroMagnitude
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch self.sections[section] {
+        case .cover, .info: return 12
+        default: return .leastNonzeroMagnitude
+        }
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        switch self.sections[section] {
+        case .cover, .info:
+            let view = UIView()
+            view.backgroundColor = UIColor(hex: "F8F8F8")
+            return view
+        default: return nil
+        }
+    }
 }
