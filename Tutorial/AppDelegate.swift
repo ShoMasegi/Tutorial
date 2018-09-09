@@ -6,6 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        setupNavigationBar()
         setupWindow()
         return true
     }
@@ -34,6 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Application.shared.setup(in: window)
             return window
         }()
+    }
+
+    private func setupNavigationBar() {
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = .t_grey
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
     }
 }
 

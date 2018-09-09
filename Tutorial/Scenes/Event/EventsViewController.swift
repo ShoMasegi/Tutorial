@@ -29,6 +29,7 @@ class EventsViewController: UIViewController {
         let label = UILabel()
         label.isUserInteractionEnabled = true
         label.text = "Event"
+        label.textColor = .white
         label.font = .systemFont(ofSize: 17, weight: .semibold)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapTitleView(_:)))
         label.addGestureRecognizer(gesture)

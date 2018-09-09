@@ -1,7 +1,7 @@
 import UIKit
 
 public extension UIColor {
-    public static var t_grey: UIColor { return UIColor(hex: "212121", alpha: 0.72) }
+    public static var t_grey: UIColor { return UIColor(hex: "555555") }
     public static var t_border: UIColor { return UIColor(hex: "707070", alpha: 0.25) }
 }
 
