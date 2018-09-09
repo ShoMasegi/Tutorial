@@ -13,3 +13,4 @@ github "kean/Nuke" ~> 7.0
 # ui
 github "SnapKit/SnapKit"
 github "SVProgressHUD/SVProgressHUD"
+github "iwasrobbed/Down"

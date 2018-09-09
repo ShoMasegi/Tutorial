@@ -61,6 +61,7 @@
 		36EDE4BB2143A8D700A07285 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */; };
 		36EDE4BD2144234700A07285 /* RepositoryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */; };
 		36EDE4BF214446C200A07285 /* ImageLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BE214446C200A07285 /* ImageLabelCell.swift */; };
+		36EDE4C121453FF200A07285 /* Down.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EDE4C021453FF200A07285 /* Down.framework */; };
 		858BC5C0BD6F39CF41D36B36 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoCell.swift; sourceTree = "<group>"; };
 		36EDE4BE214446C200A07285 /* ImageLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelCell.swift; sourceTree = "<group>"; };
+		36EDE4C021453FF200A07285 /* Down.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Down.framework; path = Carthage/Build/iOS/Down.framework; sourceTree = "<group>"; };
 		BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EDE4C121453FF200A07285 /* Down.framework in Frameworks */,
 				363F86E921402F1B00C160A6 /* RxDataSources.framework in Frameworks */,
 				36D2727B213CDC4100AF0ACE /* Differentiator.framework in Frameworks */,
 				36EC1E8F213828FE007CE7E3 /* RxSwift.framework in Frameworks */,
@@ -344,6 +347,7 @@
 		C70C84C69F5CCE169F80E219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36EDE4C021453FF200A07285 /* Down.framework */,
 				363F86E821402F1B00C160A6 /* RxDataSources.framework */,
 				36D27279213CDC4100AF0ACE /* Differentiator.framework */,
 				36D2724D213A139600AF0ACE /* Nuke.framework */,
@@ -451,6 +455,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)//Carthage/Build/iOS/Down.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
