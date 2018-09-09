@@ -6,7 +6,7 @@ import SnapKit
 class EventsViewController: UIViewController {
 
     private lazy var viewModel: EventsViewModel = {
-        let provider = Application.shared.defaultUseCaseProvider()
+        let provider = UseCaseProvider(networking: Networking.newDefaultNetworking())
         let navigator = MainNavigator(provider: provider, navigationController: self.navigationController)
         return EventsViewModel(useCase: provider.makeEventsUseCase(), navigator: navigator)
     }()
@@ -83,7 +83,11 @@ class EventsViewController: UIViewController {
         }).disposed(by: bag)
         output.isNavigated.drive().disposed(by: bag)
         output.error.drive(onNext: { error in
-            print(error.localizedDescription)
+            if let apiError = error as? APIError {
+                self.presentAlert(title: "Error", message: apiError.message)
+            } else {
+                print(error.localizedDescription)
+            }
         }).disposed(by: bag)
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let `self` = self else { return }

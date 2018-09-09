@@ -11,7 +11,7 @@ public final class EventsUseCase {
 
     func events(page: Int) -> Observable<Response<[Event]>> {
         return network.request(.event(page: page))
-                .filterSuccessfulStatusCodes()
+                .filterAPIError()
                 .map(to: [Event].self)
     }
 }

@@ -11,13 +11,13 @@ final class RepositoryUseCase {
 
     func repository(apiUrl: String) -> Observable<Response<Repository>> {
         return network.request(.custom(url: apiUrl, method: .get))
-                .filterSuccessfulStatusCodes()
+                .filterAPIError()
                 .map(to: Repository.self)
     }
 
     func readme(owner: String, repo: String) -> Observable<Response<ReadMe>> {
         return network.requestNoFilter(.readme(owner: owner, repo: repo))
-                .filterSuccessfulStatusCodes()
+                .filterAPIError()
                 .map(to: ReadMe.self)
     }
 }

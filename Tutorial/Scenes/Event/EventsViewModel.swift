@@ -13,7 +13,8 @@ final class EventsViewModel {
     }
 
     private let elements = Variable<[Event]>([])
-    private var page = 1
+    private let hasNext = Variable<Bool>(true)
+    private let lastLoadedPage = Variable<Int>(1)
 }
 
 extension EventsViewModel {
@@ -43,26 +44,27 @@ extension EventsViewModel: ViewModelType {
         let errors = errorTracker.asDriver()
         let refreshResponse = Driver.merge(input.initTrigger, input.refreshTrigger)
                 .withLatestFrom(refreshing)
+                .filter { !$0 }
                 .do(onNext: { _ in
                     self.elements.value = []
-                    self.page = 1
+                    self.lastLoadedPage.value = 1
+                    self.hasNext.value = true
                 })
                 .flatMapLatest { (_) -> Driver<[Event]> in
                     return self.request(
-                            page: self.page,
+                            page: self.lastLoadedPage.value,
                             activityIndicator: refreshingActivityIndicator,
                             errorTracker: errorTracker
                     )
                 }
-        // TODO: 次のページがなかった場合リクエストを止めるようにする
         let nextPageResponse = input.loadNextPageTrigger
                 .withLatestFrom(loading)
                 .filter { !$0 }
-                .do(onNext: { _ in
-                    self.page += 1
-                })
-                .flatMap { Void -> Driver<[Event]> in
-                    return self.request(page: self.page,
+                .withLatestFrom(hasNext.asDriver())
+                .filter { $0 }
+                .withLatestFrom(lastLoadedPage.asDriver())
+                .flatMap { lastLoadedPage -> Driver<[Event]> in
+                    return self.request(page: lastLoadedPage + 1,
                             activityIndicator: loadingActivityIndicator,
                             errorTracker: errorTracker)
                 }
@@ -92,7 +94,14 @@ extension EventsViewModel: ViewModelType {
         return useCase.events(page: page)
                 .trackActivity(activityIndicator)
                 .trackError(errorTracker)
+                .do(onNext: { _ in
+                    self.lastLoadedPage.value += 1
+                })
                 .map { $0.data }
+                .catchError({ _ -> Observable<[Event]> in
+                    self.hasNext.value = false
+                    return Observable.just([])
+                })
                 .asDriver(onErrorJustReturn: [])
     }
 }
