@@ -7,6 +7,7 @@ class RepositoryViewController: UIViewController {
 
     private let viewModel: RepositoryViewModel
     private var repo: Repository?
+    private var readme: ReadMe?
     private let bag = DisposeBag()
 
     init(viewModel: RepositoryViewModel, repo: Repository) {
@@ -69,7 +70,7 @@ class RepositoryViewController: UIViewController {
                     guard let `self` = self else { return }
                     self.title = repository?.name
                     self.repo = repository
-                    print(readme?.downloadUrl.absoluteString)
+                    self.readme = readme
                     self.tableView.reloadData()
                 }).disposed(by: bag)
     }
@@ -97,6 +98,7 @@ extension RepositoryViewController: UITableViewDataSource {
             return cell
         case .readme:
             let cell: ReadMeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.readme = self.readme
             return cell
         }
     }

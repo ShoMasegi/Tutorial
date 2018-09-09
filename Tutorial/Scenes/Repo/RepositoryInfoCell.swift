@@ -56,7 +56,6 @@ class RepositoryInfoCell: UIView {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
         imageView.image = self.type.image
         return imageView
     }()
