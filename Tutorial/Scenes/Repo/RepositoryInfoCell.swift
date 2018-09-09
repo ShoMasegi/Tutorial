@@ -34,7 +34,7 @@ class RepositoryInfoCell: UIView {
         }
     }
 
-    var type: CellType = .star(count: 0) {
+    var type: CellType {
         didSet {
             iconImageView.image = type.image
             titleLabel.text = type.title
@@ -42,7 +42,8 @@ class RepositoryInfoCell: UIView {
         }
     }
 
-    init() {
+    init(type: CellType = .star(count: 0)) {
+        self.type = type
         super.init(frame: .zero)
         backgroundColor = .white
         self.layer.borderWidth = 0.5

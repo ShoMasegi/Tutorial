@@ -41,10 +41,10 @@ class RepositoryInfoTableViewCell: UITableViewCell, Reusable {
         stackView.spacing = 0
         return stackView
     }()
-    private lazy var accessCell = ImageLabelCell()
-    private lazy var languageCell = ImageLabelCell()
-    private lazy var issuesCell = ImageLabelCell()
-    private lazy var dateCell = ImageLabelCell()
+    private lazy var accessCell = ImageLabelCell(type: .access(isPrivate: nil))
+    private lazy var languageCell = ImageLabelCell(type: .lang(language: nil))
+    private lazy var issuesCell = ImageLabelCell(type: .issue(count: nil))
+    private lazy var dateCell = ImageLabelCell(type: .date(date: nil))
 
     private func setupSubviews() {
         [accessCell, languageCell].forEach(firstRow.addArrangedSubview)

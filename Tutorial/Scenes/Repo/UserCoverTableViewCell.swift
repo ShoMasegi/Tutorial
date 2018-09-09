@@ -67,9 +67,9 @@ class UserCoverTableViewCell: UITableViewCell, Reusable {
         stackView.spacing = 0
         return stackView
     }()
-    private lazy var starCell = RepositoryInfoCell()
-    private lazy var watchCell = RepositoryInfoCell()
-    private lazy var forkCell = RepositoryInfoCell()
+    private lazy var starCell = RepositoryInfoCell(type: .star(count: 0))
+    private lazy var watchCell = RepositoryInfoCell(type: .watch(count: 0))
+    private lazy var forkCell = RepositoryInfoCell(type: .fork(count: 0))
 
     private func setupSubviews() {
         [starCell, watchCell, forkCell].forEach(stackView.addArrangedSubview)

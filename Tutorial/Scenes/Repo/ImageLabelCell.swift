@@ -35,14 +35,15 @@ class ImageLabelCell: UIView {
         }
     }
 
-    var type: CellType = .access(isPrivate: false) {
+    var type: CellType {
         didSet {
             self.titleLabel.text = type.title
             self.iconImageView.image = type.image
         }
     }
 
-    init() {
+    init(type: CellType = .access(isPrivate: false)) {
+        self.type = type
         super.init(frame: .zero)
         backgroundColor = .white
         self.layer.borderWidth = 0.5
