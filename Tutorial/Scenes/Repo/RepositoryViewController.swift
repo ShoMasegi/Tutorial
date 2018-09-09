@@ -35,10 +35,10 @@ class RepositoryViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.backgroundColor = .white
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
-        tableView.backgroundColor = .t_grey
+        tableView.backgroundColor = .white
+        tableView.bounces = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UserCoverTableViewCell.self)
@@ -63,12 +63,15 @@ class RepositoryViewController: UIViewController {
                 initTrigger: initTrigger
         )
         let output = viewModel.transform(input: input)
-        output.repository.drive(onNext: { [weak self] repository in
-            guard let `self` = self else { return }
-            self.title = repository?.name
-            self.repo = repository
-            self.tableView.reloadData()
-        }).disposed(by: bag)
+        Driver
+                .zip(output.repository, output.readme)
+                .drive(onNext: { [weak self] (repository, readme) in
+                    guard let `self` = self else { return }
+                    self.title = repository?.name
+                    self.repo = repository
+                    print(readme?.downloadUrl.absoluteString)
+                    self.tableView.reloadData()
+                }).disposed(by: bag)
     }
 }
 
