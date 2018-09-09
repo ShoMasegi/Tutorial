@@ -18,7 +18,7 @@ class LockViewController: UIViewController {
         }
 
         var url: String {
-            return "https://google.com/"
+            return "https://github.com/ShoMasegi/Tutorial"
         }
     }
 
