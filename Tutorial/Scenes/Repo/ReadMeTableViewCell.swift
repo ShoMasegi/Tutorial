@@ -62,24 +62,23 @@ class ReadMeTableViewCell: UITableViewCell, Reusable {
     private func setupSubviews() {
         [iconImageView, headerLabel].forEach(headerView.addSubview)
         [headerView, downView].forEach(contentView.addSubview)
-        iconImageView.snp.makeConstraints {
-            $0.height.width.equalTo(18)
-            $0.left.equalToSuperview().offset(18)
-            $0.top.bottom.equalToSuperview().inset(9)
-            $0.centerY.equalToSuperview()
-        }
-        headerLabel.snp.makeConstraints {
-            $0.left.equalTo(iconImageView.snp.right).offset(16)
-            $0.right.greaterThanOrEqualToSuperview().inset(10)
-            $0.centerY.equalToSuperview()
-        }
         headerView.snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
         }
         downView.snp.makeConstraints {
-            $0.left.right.bottom.equalToSuperview()
-            $0.top.equalTo(headerView.snp.bottom)
             $0.height.equalTo(downViewSize)
+            $0.top.equalTo(headerView.snp.bottom)
+            $0.left.right.bottom.equalToSuperview()
+        }
+        iconImageView.snp.makeConstraints {
+            $0.height.width.equalTo(18)
+            $0.left.equalToSuperview().offset(18)
+            $0.top.bottom.equalToSuperview().inset(9)
+        }
+        headerLabel.snp.makeConstraints {
+            $0.left.equalTo(iconImageView.snp.right).offset(16)
+            $0.right.greaterThanOrEqualToSuperview().inset(10)
+            $0.centerY.equalTo(iconImageView)
         }
     }
 }
