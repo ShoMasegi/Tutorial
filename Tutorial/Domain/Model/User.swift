@@ -3,7 +3,7 @@ import Foundation
 struct User: Decodable {
     let id: Int64
     let login: String
-    let name: String
+    let name: String?
     let url: URL
     let avatarUrl: URL
 

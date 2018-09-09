@@ -1,10 +1,13 @@
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class RepositoryViewController: UIViewController {
 
     private let viewModel: RepositoryViewModel
-    private let repo: Repository
+    private var repo: Repository?
+    private let bag = DisposeBag()
 
     init(viewModel: RepositoryViewModel, repo: Repository) {
         self.viewModel = viewModel
@@ -16,18 +19,23 @@ class RepositoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = repo.name
+        self.title = repo?.name
         self.setupSubviews()
     }
 
+    private enum SectionType {
+        case cover, info, readme
+    }
+    
+    private let sections: [SectionType] = [.cover, .info, .readme]
+
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = .white
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        tableView.separatorColor = .lightGray
-        tableView.tableFooterView = UIView()
+        tableView.separatorColor = .clear
+        tableView.allowsSelection = false
         return tableView
     }()
 
@@ -37,4 +45,22 @@ class RepositoryViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
     }
+
+    private func bind() {
+        let trigger: PublishSubject<Void> = PublishSubject<Void>()
+        defer { trigger.onNext(()) }
+        let initTrigger = trigger.asDriver(onErrorJustReturn: ())
+        let input = RepositoryViewModel.Input(
+                apiUrl: repo?.url,
+                initTrigger: initTrigger
+        )
+        let output = viewModel.transform(input: input)
+        output.repository.drive(onNext: { [weak self] repository in
+            guard let `self` = self else { return }
+            self.title = repository?.name
+            self.repo = repository
+        }).disposed(by: bag)
+    }
+}
+
 }

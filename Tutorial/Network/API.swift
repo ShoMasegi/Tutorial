@@ -4,6 +4,7 @@ import Alamofire
 public enum API {
     case event(page: Int)
     case userEvent(username: String)
+    case custom(url: String, method: Moya.Method)
 }
 
 extension API: TargetType {
@@ -30,6 +31,14 @@ extension API: TargetType {
             return "events"
         case .userEvent(let username):
             return "users/\(username)/events/public"
+        case .custom(var url, _):
+            // TODO: fix this
+            if let range = url.range(of: Environment.urlString) {
+                url.removeSubrange(range)
+                return url
+            } else {
+                fatalError()
+            }
         }
     }
 
@@ -37,6 +46,8 @@ extension API: TargetType {
         switch self {
         case .event, .userEvent:
             return .get
+        case .custom(_, let method):
+            return method
         }
     }
 
