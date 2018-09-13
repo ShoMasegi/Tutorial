@@ -33,7 +33,7 @@ class RepositoryViewController: UIViewController {
     private let sections: [SectionType] = [.cover, .info, .readme]
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorColor = .clear
@@ -45,6 +45,7 @@ class RepositoryViewController: UIViewController {
         tableView.register(UserCoverTableViewCell.self)
         tableView.register(RepositoryInfoTableViewCell.self)
         tableView.register(ReadMeTableViewCell.self)
+        tableView.registerReusableHeaderFooterView(ReadmeHeaderView.self)
         return tableView
     }()
 
@@ -107,7 +108,10 @@ extension RepositoryViewController: UITableViewDataSource {
 extension RepositoryViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return .leastNonzeroMagnitude
+        switch self.sections[section] {
+        case .readme: return UITableViewAutomaticDimension
+        default: return .leastNonzeroMagnitude
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -118,7 +122,12 @@ extension RepositoryViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
+        switch self.sections[section] {
+        case .readme:
+            let view: ReadmeHeaderView = tableView.dequeueReusableHeaderFooterView()
+            return view
+        default: return UIView()
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
