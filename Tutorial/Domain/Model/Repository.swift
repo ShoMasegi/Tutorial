@@ -12,22 +12,6 @@ struct Repository: Decodable {
     let stargazersCount: Int?
     let language: String?
     let updatedAt: Date?
-    let isPrivate: Bool?
+    let `private`: Bool?
     let description: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case fullName = "full_name"
-        case owner
-        case url
-        case forksCount = "forks_count"
-        case openIssuesCount = "open_issues_count"
-        case watchersCount = "watchers_count"
-        case stargazersCount = "stargazers_count"
-        case language
-        case updatedAt = "updated_at"
-        case isPrivate = "private"
-        case description
-    }
 }

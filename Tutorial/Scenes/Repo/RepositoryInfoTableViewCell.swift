@@ -6,7 +6,7 @@ class RepositoryInfoTableViewCell: UITableViewCell, Reusable {
     var repo: Repository? {
         didSet {
             guard let repo = self.repo else { return }
-            accessCell.type = .access(isPrivate: repo.isPrivate)
+            accessCell.type = .access(isPrivate: repo.private)
             languageCell.type = .lang(language: repo.language)
             issuesCell.type = .issue(count: repo.openIssuesCount)
             dateCell.type = .date(date: repo.updatedAt)
