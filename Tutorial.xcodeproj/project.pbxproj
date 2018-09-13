@@ -56,13 +56,13 @@
 		36EC1E97213830D1007CE7E3 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E96213830D1007CE7E3 /* Application.swift */; };
 		36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC1E9821383130007CE7E3 /* RootViewController.swift */; };
 		36EDE4B121439A1300A07285 /* UserCoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B021439A1300A07285 /* UserCoverTableViewCell.swift */; };
-		36EDE4B521439BFA00A07285 /* ReadMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B421439BFA00A07285 /* ReadMeTableViewCell.swift */; };
+		36EDE4B521439BFA00A07285 /* ReadmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B421439BFA00A07285 /* ReadmeTableViewCell.swift */; };
 		36EDE4B721439C2000A07285 /* RepositoryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4B621439C2000A07285 /* RepositoryInfoTableViewCell.swift */; };
 		36EDE4BB2143A8D700A07285 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */; };
 		36EDE4BD2144234700A07285 /* RepositoryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */; };
 		36EDE4BF214446C200A07285 /* ImageLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4BE214446C200A07285 /* ImageLabelCell.swift */; };
 		36EDE4C121453FF200A07285 /* Down.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EDE4C021453FF200A07285 /* Down.framework */; };
-		36EDE4C32145433300A07285 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4C22145433300A07285 /* ReadMe.swift */; };
+		36EDE4C32145433300A07285 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4C22145433300A07285 /* Readme.swift */; };
 		858BC5C0BD6F39CF41D36B36 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */; };
 		BF8CFF1930D53CA35932EF7B /* ReadmeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -122,13 +122,13 @@
 		36EC1E96213830D1007CE7E3 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		36EC1E9821383130007CE7E3 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		36EDE4B021439A1300A07285 /* UserCoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoverTableViewCell.swift; sourceTree = "<group>"; };
-		36EDE4B421439BFA00A07285 /* ReadMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeTableViewCell.swift; sourceTree = "<group>"; };
+		36EDE4B421439BFA00A07285 /* ReadmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeTableViewCell.swift; sourceTree = "<group>"; };
 		36EDE4B621439C2000A07285 /* RepositoryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoTableViewCell.swift; sourceTree = "<group>"; };
 		36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoCell.swift; sourceTree = "<group>"; };
 		36EDE4BE214446C200A07285 /* ImageLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelCell.swift; sourceTree = "<group>"; };
 		36EDE4C021453FF200A07285 /* Down.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Down.framework; path = Carthage/Build/iOS/Down.framework; sourceTree = "<group>"; };
-		36EDE4C22145433300A07285 /* ReadMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
+		36EDE4C22145433300A07285 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadmeHeaderView.swift; sourceTree = "<group>"; };
 		EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +175,7 @@
 				363F86E0213EA8EC00C160A6 /* RepositoryViewController.swift */,
 				363F86E2213EA90000C160A6 /* RepositoryViewModel.swift */,
 				36EDE4B021439A1300A07285 /* UserCoverTableViewCell.swift */,
-				36EDE4B421439BFA00A07285 /* ReadMeTableViewCell.swift */,
+				36EDE4B421439BFA00A07285 /* ReadmeTableViewCell.swift */,
 				36EDE4B621439C2000A07285 /* RepositoryInfoTableViewCell.swift */,
 				36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */,
 				36EDE4BE214446C200A07285 /* ImageLabelCell.swift */,
@@ -291,7 +291,7 @@
 				36D2726D213C3AF100AF0ACE /* Event.swift */,
 				36D2726F213C3D6600AF0ACE /* User.swift */,
 				36D27271213C3D6E00AF0ACE /* Repository.swift */,
-				36EDE4C22145433300A07285 /* ReadMe.swift */,
+				36EDE4C22145433300A07285 /* Readme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,7 +500,7 @@
 				363F86E3213EA90000C160A6 /* RepositoryViewModel.swift in Sources */,
 				36EC1E97213830D1007CE7E3 /* Application.swift in Sources */,
 				3636B56F213D87E0007AD178 /* UIScroll+Rx.swift in Sources */,
-				36EDE4B521439BFA00A07285 /* ReadMeTableViewCell.swift in Sources */,
+				36EDE4B521439BFA00A07285 /* ReadmeTableViewCell.swift in Sources */,
 				36D2725D213A741500AF0ACE /* LockViewController.swift in Sources */,
 				36EDE4B721439C2000A07285 /* RepositoryInfoTableViewCell.swift in Sources */,
 				36EDE4B121439A1300A07285 /* UserCoverTableViewCell.swift in Sources */,
@@ -508,7 +508,7 @@
 				3635E569213D0CE000C10577 /* ErrorTracker.swift in Sources */,
 				3635E56B213D116200C10577 /* Observable+Extension.swift in Sources */,
 				36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */,
-				36EDE4C32145433300A07285 /* ReadMe.swift in Sources */,
+				36EDE4C32145433300A07285 /* Readme.swift in Sources */,
 				36D27266213C054700AF0ACE /* Response.swift in Sources */,
 				36EDE4BF214446C200A07285 /* ImageLabelCell.swift in Sources */,
 				36D27260213BEFF700AF0ACE /* SplashViewController.swift in Sources */,
