@@ -47,8 +47,12 @@ class SplashViewController: UIViewController {
 
     private func prepare() {
         viewModel.getEvens(onSuccess: { _ in
-            let nc = UINavigationController(rootViewController: EventsViewController())
-            Application.shared.rootViewController.animateFadeTransition(to: nc)
+            let navigationController = UINavigationController()
+            let provider = UseCaseProvider(networking: Networking.newDefaultNetworking())
+            let navigator = MainNavigator(provider: provider, navigationController: navigationController)
+            Application.shared.rootViewController.animateFadeTransition(to: navigationController) {
+                navigator.toRoot()
+            }
         }, onError: { message in
             self.presentAlert(message: message)
         })

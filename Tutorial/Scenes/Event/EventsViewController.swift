@@ -5,14 +5,11 @@ import SnapKit
 
 class EventsViewController: UIViewController {
 
-    private lazy var viewModel: EventsViewModel = {
-        let provider = UseCaseProvider(networking: Networking.newDefaultNetworking())
-        let navigator = MainNavigator(provider: provider, navigationController: self.navigationController)
-        return EventsViewModel(useCase: provider.makeEventsUseCase(), navigator: navigator)
-    }()
+    private let viewModel: EventsViewModel
     private let bag = DisposeBag()
 
-    init() {
+    init(viewModel: EventsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 

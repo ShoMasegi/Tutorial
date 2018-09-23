@@ -12,7 +12,9 @@ final class MainNavigator {
     }
 
     func toRoot() {
-        navigationController?.popToRootViewController(animated: true)
+        let viewModel = EventsViewModel(useCase: provider.makeEventsUseCase(), navigator: self)
+        let viewController = EventsViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: false)
     }
 
     func toRepository(repo: Repository) {
