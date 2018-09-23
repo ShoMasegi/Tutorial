@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupNavigationBar() {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = .t_grey
+        UINavigationBar.appearance().barStyle = .black
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
     }
