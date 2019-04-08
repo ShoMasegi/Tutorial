@@ -1,8 +1,8 @@
 # Tutorial
 
-![](https://img.shields.io/badge/Xcode-9.4%2B-blue.svg)
+![](https://img.shields.io/badge/Xcode-10.2%2B-blue.svg)
 ![](https://img.shields.io/badge/iOS-10.0%2B-blue.svg)
-![](https://img.shields.io/badge/Swift-4.0%2B-orange.svg)
+![](https://img.shields.io/badge/Swift-5.0%2B-orange.svg)
 
 Github client app (no authorization).
 Learn how to layout without storyboard and xib.
@@ -13,7 +13,7 @@ Learn how to layout without storyboard and xib.
 
 ## Setup
 
-1. Download the Xcode 9.4.1 release.
+1. Download the Xcode 10.2 release.
 2. Clone this repository.
 3. Run `make bootstrap` to install tools and dependencies.
 
