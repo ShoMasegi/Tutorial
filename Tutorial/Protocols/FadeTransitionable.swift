@@ -9,18 +9,18 @@ extension FadeTransitionable where Self: UIViewController {
         guard let current = self.current else {
             return
         }
-        addChildViewController(current)
+        addChild(current)
         current.view.frame = view.bounds
         view.addSubview(current.view)
-        current.didMove(toParentViewController: self)
+        current.didMove(toParent: self)
     }
 
     func animateFadeTransition(to toViewController: UIViewController, completion: (() -> Void)? = nil) {
         guard let current = self.current else {
             return
         }
-        current.willMove(toParentViewController: nil)
-        addChildViewController(toViewController)
+        current.willMove(toParent: nil)
+        addChild(toViewController)
         transition(
             from: current,
             to: toViewController,
@@ -29,8 +29,8 @@ extension FadeTransitionable where Self: UIViewController {
             animations: nil,
             completion: { [weak self] _ in
                 guard let `self` = self else { return }
-                self.current?.removeFromParentViewController()
-                toViewController.didMove(toParentViewController: self)
+                self.current?.removeFromParent()
+                toViewController.didMove(toParent: self)
                 self.current = toViewController
                 self.setNeedsStatusBarAppearanceUpdate()
                 completion?()

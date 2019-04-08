@@ -28,7 +28,7 @@ class SplashViewController: UIViewController {
     }()
 
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let indicator = UIActivityIndicatorView(style: .gray)
         indicator.backgroundColor = .clear
         return indicator
     }()

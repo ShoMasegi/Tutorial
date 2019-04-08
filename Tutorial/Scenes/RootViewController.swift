@@ -16,10 +16,10 @@ class RootViewController: UIViewController, FadeTransitionable {
         setupCurrent()
     }
 
-    override var childViewControllerForStatusBarStyle: UIViewController? {
+    override var childForStatusBarStyle: UIViewController? {
         return current
     }
-    override var childViewControllerForStatusBarHidden: UIViewController? {
+    override var childForStatusBarHidden: UIViewController? {
         return current
     }
 }

@@ -35,7 +35,7 @@ class RepositoryViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.estimatedRowHeight = 50
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
         tableView.backgroundColor = .white
@@ -109,7 +109,7 @@ extension RepositoryViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch self.sections[section] {
-        case .readme: return UITableViewAutomaticDimension
+        case .readme: return UITableView.automaticDimension
         default: return .leastNonzeroMagnitude
         }
     }
