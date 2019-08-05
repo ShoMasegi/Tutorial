@@ -13,7 +13,6 @@ class RepositoryInfoCell: UIView {
             case .star: return UIImage(named: "star")
             case .watch: return UIImage(named: "watch")
             case .fork: return UIImage(named: "fork")
-            default: return nil
             }
         }
 
