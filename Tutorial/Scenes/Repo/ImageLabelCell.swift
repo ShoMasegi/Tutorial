@@ -74,8 +74,7 @@ class ImageLabelCell: UIView {
         [iconImageView, titleLabel].forEach(self.addSubview)
         iconImageView.snp.makeConstraints {
             $0.width.height.equalTo(20)
-            $0.centerY.equalToSuperview()
-            $0.top.bottom.equalToSuperview().inset(11)
+            $0.top.bottom.equalToSuperview().inset(11).priorityMedium()
             $0.left.equalToSuperview().offset(16)
         }
         titleLabel.snp.makeConstraints {
