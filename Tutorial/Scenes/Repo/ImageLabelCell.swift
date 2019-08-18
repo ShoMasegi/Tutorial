@@ -25,7 +25,7 @@ class ImageLabelCell: UIView {
             case .lang(let language):
                 return language ?? "Unknown"
             case .issue(let count):
-                return "\(count ?? 0) issues"
+                return "\(count?.withComma ?? "0") issues"
             case .date(let date):
                 guard let date = date else { return "Unknown" }
                 let formatter = DateFormatter()

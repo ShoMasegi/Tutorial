@@ -11,7 +11,7 @@ class UserCoverTableViewCell: UITableViewCell, Reusable {
                 Nuke.loadImage(with: owner.avatarUrl, into: iconImageView)
                 userNameLabel.text = owner.login
             }
-            descriptionLabel.text = repo.description
+            descriptionLabel.text = repo.description ?? "No description"
             starCell.type = .star(count: repo.stargazersCount ?? 0)
             watchCell.type = .watch(count: repo.watchersCount ?? 0)
             forkCell.type = .fork(count: repo.forksCount ?? 0)
