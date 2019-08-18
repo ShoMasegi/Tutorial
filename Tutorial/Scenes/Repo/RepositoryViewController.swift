@@ -101,6 +101,7 @@ extension RepositoryViewController: UITableViewDataSource {
             }
             let cell: ReadMeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.readme = readme
+            cell.delegate = self
             return cell
         }
     }
@@ -146,3 +147,9 @@ extension RepositoryViewController: UITableViewDelegate {
     }
 }
 
+extension RepositoryViewController: ReadMeTableViewCellDelegate {
+    func didFinishLoad(_ readMeTableViewCell: ReadMeTableViewCell) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+}

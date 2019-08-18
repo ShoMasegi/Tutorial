@@ -1,8 +1,15 @@
 import UIKit
 import SnapKit
 import Down
+import WebKit
+
+protocol ReadMeTableViewCellDelegate: class {
+    func didFinishLoad(_ readMeTableViewCell: ReadMeTableViewCell)
+}
 
 final class ReadMeTableViewCell: UITableViewCell, Reusable {
+
+    weak var delegate: ReadMeTableViewCellDelegate?
 
     var readme: ReadMe? = nil {
         didSet {
@@ -32,6 +39,7 @@ final class ReadMeTableViewCell: UITableViewCell, Reusable {
         )
         downView.scrollView.showsHorizontalScrollIndicator = false
         downView.scrollView.bounces = false
+        downView.navigationDelegate = self
         return downView
     }()
 
@@ -40,6 +48,25 @@ final class ReadMeTableViewCell: UITableViewCell, Reusable {
         downView.snp.makeConstraints {
             $0.height.equalTo(100)
             $0.edges.equalToSuperview()
+        }
+    }
+}
+
+extension ReadMeTableViewCell: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.readyState") { (complete, error) in
+            if complete != nil {
+                webView.evaluateJavaScript("document.body.scrollHeight") { [weak self] (height, error) in
+                    guard let self = self,
+                          let height = height as? CGFloat else {
+                        return
+                    }
+                    self.downView.snp.updateConstraints {
+                        $0.height.equalTo(height)
+                    }
+                    self.delegate?.didFinishLoad(self)
+                }
+            }
         }
     }
 }
