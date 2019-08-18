@@ -63,15 +63,24 @@ class RepositoryViewController: UIViewController {
                 initTrigger: initTrigger
         )
         let output = viewModel.transform(input: input)
-        Driver
-                .zip(output.repository, output.readme)
-                .drive(onNext: { [weak self] (repository, readme) in
-                    guard let `self` = self else { return }
-                    self.title = repository?.name
-                    self.repo = repository
-                    self.readme = readme
-                    self.tableView.reloadData()
-                }).disposed(by: bag)
+        output.data
+            .drive(onNext: { [weak self] (repository, readme) in
+                guard let self = self else { return }
+                self.title = repository.name
+                self.repo = repository
+                self.readme = readme
+                self.tableView.reloadData()
+            }).disposed(by: bag)
+        output.loading
+            .drive(onNext: { isLoading in
+                if isLoading {
+                    LoadingMask.show()
+                } else {
+                    LoadingMask.dismiss()
+                }
+            }, onCompleted: {
+                LoadingMask.dismiss()
+            }).disposed(by: bag)
     }
 }
 

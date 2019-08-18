@@ -66,6 +66,7 @@
 		858BC5C0BD6F39CF41D36B36 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */; };
 		BF8CFF1930D53CA35932EF7B /* ReadmeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */; };
 		D1FA58FB230812DA0065301B /* DownView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1FA58FA230812DA0065301B /* DownView.bundle */; };
+		D1FA58FD2309369A0065301B /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FA58FC2309369A0065301B /* LoadingMask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadmeHeaderView.swift; sourceTree = "<group>"; };
 		D1FA58FA230812DA0065301B /* DownView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DownView.bundle; sourceTree = "<group>"; };
+		D1FA58FC2309369A0065301B /* LoadingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMask.swift; sourceTree = "<group>"; };
 		EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 				36D2725B213A740200AF0ACE /* Lock */,
 				36D27273213C4D8700AF0ACE /* Event */,
 				363F86DF213EA8BF00C160A6 /* Repo */,
+				D1FA58FC2309369A0065301B /* LoadingMask.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				36EDE4B721439C2000A07285 /* RepositoryInfoTableViewCell.swift in Sources */,
 				36EDE4B121439A1300A07285 /* UserCoverTableViewCell.swift in Sources */,
 				36D27264213BF35900AF0ACE /* SplashUseCase.swift in Sources */,
+				D1FA58FD2309369A0065301B /* LoadingMask.swift in Sources */,
 				3635E569213D0CE000C10577 /* ErrorTracker.swift in Sources */,
 				3635E56B213D116200C10577 /* Observable+Extension.swift in Sources */,
 				36EC1E9921383130007CE7E3 /* RootViewController.swift in Sources */,
