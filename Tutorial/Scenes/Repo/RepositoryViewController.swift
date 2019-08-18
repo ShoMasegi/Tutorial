@@ -34,12 +34,10 @@ class RepositoryViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.estimatedRowHeight = 50
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
-        tableView.backgroundColor = .white
         tableView.bounces = false
+        tableView.backgroundColor = UIColor(hex: "F8F8F8")
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UserCoverTableViewCell.self)
@@ -98,8 +96,11 @@ extension RepositoryViewController: UITableViewDataSource {
             cell.repo = self.repo
             return cell
         case .readme:
+            guard let readme = self.readme else {
+                return UITableViewCell()
+            }
             let cell: ReadMeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.readme = self.readme
+            cell.readme = readme
             return cell
         }
     }
@@ -109,7 +110,8 @@ extension RepositoryViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch self.sections[section] {
-        case .readme: return UITableView.automaticDimension
+        case .readme:
+            return readme != nil ? UITableView.automaticDimension : .leastNonzeroMagnitude
         default: return .leastNonzeroMagnitude
         }
     }
@@ -131,12 +133,16 @@ extension RepositoryViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        switch self.sections[section] {
-        case .cover, .info:
-            let view = UIView()
-            view.backgroundColor = UIColor(hex: "F8F8F8")
-            return view
-        default: return nil
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if sections[indexPath.section] == .readme && readme == nil {
+            return .leastNonzeroMagnitude
         }
+        return UITableView.automaticDimension
     }
 }
+

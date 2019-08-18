@@ -2,17 +2,15 @@ import UIKit
 import SnapKit
 import Down
 
-class ReadMeTableViewCell: UITableViewCell, Reusable {
+final class ReadMeTableViewCell: UITableViewCell, Reusable {
 
     var readme: ReadMe? = nil {
         didSet {
-            guard let readme = self.readme else { return }
-            if let string = try? String(contentsOf: readme.downloadUrl, encoding: .utf8) {
-                try? downView.update(markdownString: string) {}
+            guard let readme = self.readme,
+                  let string = try? String(contentsOf: readme.downloadUrl, encoding: .utf8) else {
+                return
             }
-            downView.snp.updateConstraints {
-                $0.height.equalTo(downViewSize)
-            }
+            try? downView.update(markdownString: string)
         }
     }
 
@@ -24,23 +22,23 @@ class ReadMeTableViewCell: UITableViewCell, Reusable {
     required init?(coder aDecoder: NSCoder) { fatalError() }
 
     private lazy var downView: DownView = {
-        let string = "# README.md Does Not Exist"
-        let view = try! DownView(frame: .zero, markdownString: string)
-        return view
+        let url = Bundle(for: type(of: self)).url(forResource: "DownView", withExtension: "bundle")
+        let bundle = Bundle(url: url!)
+        let downView = try! DownView(
+            frame: .zero,
+            markdownString: "",
+            openLinksInBrowser: false,
+            templateBundle: bundle
+        )
+        downView.scrollView.showsHorizontalScrollIndicator = false
+        downView.scrollView.bounces = false
+        return downView
     }()
-    private var downViewSize: CGFloat {
-        let height = UIScreen.main.bounds.height - 100
-        if let readme = self.readme, readme.size > 200 {
-            return height
-        } else {
-            return height / 2
-        }
-    }
 
     private func setupSubviews() {
         contentView.addSubview(downView)
         downView.snp.makeConstraints {
-            $0.height.equalTo(downViewSize)
+            $0.height.equalTo(100)
             $0.edges.equalToSuperview()
         }
     }
