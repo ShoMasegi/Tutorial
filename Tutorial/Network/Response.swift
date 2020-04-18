@@ -33,7 +33,7 @@ struct ErrorResponse: Decodable {
     }
 }
 
-extension ObservableType where E == Moya.Response {
+extension ObservableType where Element == Moya.Response {
 
     func map<T: Decodable>(to: T.Type) -> Observable<Response<T>> {
         return flatMap { response -> Observable<Response<T>> in
@@ -46,8 +46,8 @@ extension ObservableType where E == Moya.Response {
         }
     }
 
-    func filterAPIError() -> Observable<E> {
-        return flatMap({ response -> Observable<E> in
+    func filterAPIError() -> Observable<Element> {
+        return flatMap({ response -> Observable<Element> in
             switch response.statusCode {
             case 200...299:
                 return Observable.just(response)
