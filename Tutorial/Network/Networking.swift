@@ -7,7 +7,7 @@ public final class Provider<Target> where Target: Moya.TargetType {
     init(endpointClosure: @escaping MoyaProvider<Target>.EndpointClosure = MoyaProvider<Target>.defaultEndpointMapping,
          requestClosure: @escaping MoyaProvider<Target>.RequestClosure = MoyaProvider<Target>.defaultRequestMapping,
          stubClosure: @escaping MoyaProvider<Target>.StubClosure = MoyaProvider.neverStub,
-         manager: Manager = MoyaProvider<Target>.defaultAlamofireManager(),
+         session: Session = MoyaProvider<Target>.defaultAlamofireSession(),
          plugins: [PluginType] = [],
          trackInflights: Bool = false
     ) {
@@ -15,7 +15,7 @@ public final class Provider<Target> where Target: Moya.TargetType {
                 endpointClosure: endpointClosure,
                 requestClosure: requestClosure,
                 stubClosure: stubClosure,
-                manager: manager,
+                session: session,
                 plugins: plugins,
                 trackInflights: trackInflights
         )
@@ -62,7 +62,7 @@ extension NetworkingType {
 
     static var plugins: [PluginType] {
         return [
-            NetworkLoggerPlugin(verbose: true)
+            NetworkLoggerPlugin(configuration: Moya.NetworkLoggerPlugin.Configuration(logOptions: .verbose))
         ]
     }
 
