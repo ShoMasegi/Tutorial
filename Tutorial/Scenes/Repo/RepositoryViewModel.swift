@@ -29,15 +29,6 @@ extension RepositoryViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let loadingActivityIndicator = ActivityIndicator()
         let loading = loadingActivityIndicator.asDriver()
-        let repoResponse = input.initTrigger
-            .flatMapLatest { (_) -> Driver<Repository?> in
-                guard let url = input.apiUrl else { return Driver.empty() }
-                return self.useCase
-                    .repository(apiUrl: url.absoluteString)
-                    .trackActivity(loadingActivityIndicator)
-                    .map { $0.data }
-                    .asDriver(onErrorJustReturn: nil)
-            }
         let dataResponse = input.initTrigger
             .flatMapLatest { (_) -> Driver<Repository> in
                 guard let url = input.apiUrl else { return Driver.empty() }
