@@ -1,6 +1,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import RxRelay
 
 final class EventsViewModel {
 
@@ -12,9 +13,9 @@ final class EventsViewModel {
         self.navigator = navigator
     }
 
-    private let elements = Variable<[Event]>([])
-    private let hasNext = Variable<Bool>(true)
-    private let lastLoadedPage = Variable<Int>(1)
+    private let elements = BehaviorRelay<[Event]>(value: [])
+    private let hasNext = BehaviorRelay<Bool>(value: true)
+    private let lastLoadedPage = BehaviorRelay<Int>(value: 1)
 }
 
 extension EventsViewModel {
@@ -46,9 +47,9 @@ extension EventsViewModel: ViewModelType {
                 .withLatestFrom(refreshing)
                 .filter { !$0 }
                 .do(onNext: { _ in
-                    self.elements.value = []
-                    self.lastLoadedPage.value = 1
-                    self.hasNext.value = true
+                    self.elements.accept([])
+                    self.lastLoadedPage.accept(1)
+                    self.hasNext.accept(true)
                 })
                 .flatMapLatest { (_) -> Driver<[Event]> in
                     return self.request(
@@ -76,7 +77,7 @@ extension EventsViewModel: ViewModelType {
         Driver
                 .merge(refreshResponse, nextPageResponse)
                 .drive(onNext: {
-                    self.elements.value.append(contentsOf: $0)
+                    self.elements.accept(self.elements.value + $0)
                 }).disposed(by: bag)
 
         return Output(refreshing: refreshing,
@@ -95,11 +96,11 @@ extension EventsViewModel: ViewModelType {
                 .trackActivity(activityIndicator)
                 .trackError(errorTracker)
                 .do(onNext: { _ in
-                    self.lastLoadedPage.value += 1
+                    self.lastLoadedPage.accept(self.lastLoadedPage.value + 1)
                 })
                 .map { $0.data }
                 .catchError({ _ -> Observable<[Event]> in
-                    self.hasNext.value = false
+                    self.hasNext.accept(false)
                     return Observable.just([])
                 })
                 .asDriver(onErrorJustReturn: [])
