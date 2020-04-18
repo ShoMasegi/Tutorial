@@ -63,7 +63,6 @@
 		BF8CFF1930D53CA35932EF7B /* ReadmeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */; };
 		D1B9882B244B660700D84AF0 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B9882A244B660700D84AF0 /* MarkdownView.framework */; };
 		D1D46B55244B55870076380B /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D46B54244B55870076380B /* RxRelay.framework */; };
-		D1FA58FB230812DA0065301B /* DownView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1FA58FA230812DA0065301B /* DownView.bundle */; };
 		D1FA58FD2309369A0065301B /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FA58FC2309369A0065301B /* LoadingMask.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,7 +131,6 @@
 		BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadmeHeaderView.swift; sourceTree = "<group>"; };
 		D1B9882A244B660700D84AF0 /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
 		D1D46B54244B55870076380B /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		D1FA58FA230812DA0065301B /* DownView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DownView.bundle; sourceTree = "<group>"; };
 		D1FA58FC2309369A0065301B /* LoadingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMask.swift; sourceTree = "<group>"; };
 		EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -216,7 +214,6 @@
 			children = (
 				36EC1E7A21382029007CE7E3 /* Assets.xcassets */,
 				36EC1E7C21382029007CE7E3 /* LaunchScreen.storyboard */,
-				D1FA58FA230812DA0065301B /* DownView.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -439,7 +436,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36EC1E7E21382029007CE7E3 /* LaunchScreen.storyboard in Resources */,
-				D1FA58FB230812DA0065301B /* DownView.bundle in Resources */,
 				36EC1E7B21382029007CE7E3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
