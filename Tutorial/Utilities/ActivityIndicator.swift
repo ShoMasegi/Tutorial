@@ -1,40 +1,58 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import RxRelay
+
+private struct ActivityToken<Element>: ObservableConvertibleType, Disposable {
+    private let _source: Observable<Element>
+    private let _dispose: Cancelable
+
+    init(source: Observable<Element>, disposeAction: @escaping () -> Void) {
+        _source = source
+        _dispose = Disposables.create(with: disposeAction)
+    }
+
+    func dispose() {
+        _dispose.dispose()
+    }
+
+    func asObservable() -> Observable<Element> {
+        return _source
+    }
+}
 
 class ActivityIndicator: SharedSequenceConvertibleType {
-    typealias E = Bool
+    typealias Element = Bool
     typealias Strategy = DriverSharingStrategy
 
     private let _lock = NSRecursiveLock()
-    private let _variable = Variable(false)
-    private let _loading: SharedSequence<Strategy, E>
+    private let _relay = BehaviorRelay(value: 0)
+    private let _loading: SharedSequence<Strategy, Element>
 
     init() {
-        _loading = _variable.asDriver()
-                .distinctUntilChanged()
+        _loading = _relay.asDriver()
+            .map { $0 > 0 }
+            .distinctUntilChanged()
     }
 
-    fileprivate func trackActivityOfObservable<O: ObservableConvertibleType>(_ source: O) -> Observable<O.E> {
-        return source.asObservable()
-        .do(onNext: { _ in
-            self.sendStopLoading()
-        }, onError: { _ in
-            self.sendStopLoading()
-        }, onCompleted: {
-            self.sendStopLoading()
-        }, onSubscribe: subscribed)
+    fileprivate func trackActivityOfObservable<Source: ObservableConvertibleType>(_ source: Source) -> Observable<Source.Element> {
+        return Observable.using({ () -> ActivityToken<Source.Element> in
+            self.increment()
+            return ActivityToken(source: source.asObservable(), disposeAction: self.decrement)
+        }) { t in
+            return t.asObservable()
+        }
     }
 
-    private func subscribed() {
+    private func increment() {
         _lock.lock()
-        _variable.value = true
+        _relay.accept(_relay.value + 1)
         _lock.unlock()
     }
 
-    private func sendStopLoading() {
+    private func decrement() {
         _lock.lock()
-        _variable.value = false
+        _relay.accept(_relay.value - 1)
         _lock.unlock()
     }
 
@@ -44,7 +62,7 @@ class ActivityIndicator: SharedSequenceConvertibleType {
 }
 
 extension ObservableConvertibleType {
-    func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<E> {
+    func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<Element> {
         return activityIndicator.trackActivityOfObservable(self)
     }
 }
