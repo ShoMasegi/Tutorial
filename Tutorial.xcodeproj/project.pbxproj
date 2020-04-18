@@ -61,6 +61,7 @@
 		36EDE4C32145433300A07285 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EDE4C22145433300A07285 /* Readme.swift */; };
 		858BC5C0BD6F39CF41D36B36 /* Pods_Tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC94E4163E9078B70A0BCD9F /* Pods_Tutorial.framework */; };
 		BF8CFF1930D53CA35932EF7B /* ReadmeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */; };
+		D1B9882B244B660700D84AF0 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B9882A244B660700D84AF0 /* MarkdownView.framework */; };
 		D1D46B55244B55870076380B /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D46B54244B55870076380B /* RxRelay.framework */; };
 		D1FA58FB230812DA0065301B /* DownView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1FA58FA230812DA0065301B /* DownView.bundle */; };
 		D1FA58FD2309369A0065301B /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FA58FC2309369A0065301B /* LoadingMask.swift */; };
@@ -129,6 +130,7 @@
 		36EDE4C22145433300A07285 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
 		BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutorial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutorial/Pods-Tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		BF8CF6DD3533637F7BCCADF4 /* ReadmeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadmeHeaderView.swift; sourceTree = "<group>"; };
+		D1B9882A244B660700D84AF0 /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
 		D1D46B54244B55870076380B /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		D1FA58FA230812DA0065301B /* DownView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DownView.bundle; sourceTree = "<group>"; };
 		D1FA58FC2309369A0065301B /* LoadingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMask.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B9882B244B660700D84AF0 /* MarkdownView.framework in Frameworks */,
 				363F86E921402F1B00C160A6 /* RxDataSources.framework in Frameworks */,
 				36D2727B213CDC4100AF0ACE /* Differentiator.framework in Frameworks */,
 				36EC1E8F213828FE007CE7E3 /* RxSwift.framework in Frameworks */,
@@ -353,6 +356,7 @@
 		C70C84C69F5CCE169F80E219 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1B9882A244B660700D84AF0 /* MarkdownView.framework */,
 				D1D46B54244B55870076380B /* RxRelay.framework */,
 				36EDE4C021453FF200A07285 /* Down.framework */,
 				363F86E821402F1B00C160A6 /* RxDataSources.framework */,
@@ -459,6 +463,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)//Carthage/Build/iOS/MarkdownView.framework",
 				"$(SRCROOT)//Carthage/Build/iOS/RxRelay.framework",
 			);
 			name = "Run Script";
@@ -466,6 +471,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		F75AAA6F95AC0833DB394FAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
