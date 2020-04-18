@@ -1,17 +1,11 @@
 # networking
-github "Moya/Moya" "13.0.0-beta.1"
-
+github "Moya/Moya"
 # architecture
-github "ReactiveX/RxSwift" ~> 4.0
-github "ReactiveCocoa/ReactiveSwift" ~> 5.0
-
+github "ReactiveX/RxSwift"
 # rxswift utilities
-github "RxSwiftCommunity/RxDataSources" ~> 3.0
-
-# image
-github "kean/Nuke" ~> 7.0
-
+github "RxSwiftCommunity/RxDataSources"
 # ui
+github "kean/Nuke"
 github "SnapKit/SnapKit"
 github "SVProgressHUD/SVProgressHUD"
 github "iwasrobbed/Down"
