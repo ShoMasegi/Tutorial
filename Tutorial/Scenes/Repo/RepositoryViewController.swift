@@ -161,4 +161,10 @@ extension RepositoryViewController: ReadMeTableViewCellDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+
+    func touchedLink(_ readMeTableViewCell: ReadMeTableViewCell, link: URL) {
+        if UIApplication.shared.canOpenURL(link) {
+            UIApplication.shared.open(link)
+        }
+    }
 }

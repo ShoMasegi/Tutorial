@@ -1,10 +1,11 @@
 import UIKit
 import SnapKit
-import Down
+import MarkdownView
 import WebKit
 
 protocol ReadMeTableViewCellDelegate: class {
     func didFinishLoad(_ readMeTableViewCell: ReadMeTableViewCell)
+    func touchedLink(_ readMeTableViewCell: ReadMeTableViewCell, link: URL)
 }
 
 final class ReadMeTableViewCell: UITableViewCell, Reusable {
@@ -14,10 +15,10 @@ final class ReadMeTableViewCell: UITableViewCell, Reusable {
     var readme: ReadMe? = nil {
         didSet {
             guard let readme = self.readme,
-                  let string = try? String(contentsOf: readme.downloadUrl, encoding: .utf8) else {
+                  let markdown = try? String(contentsOf: readme.downloadUrl, encoding: .utf8) else {
                 return
             }
-            try? downView.update(markdownString: string)
+            markdownView.load(markdown: markdown)
         }
     }
 
@@ -28,45 +29,32 @@ final class ReadMeTableViewCell: UITableViewCell, Reusable {
 
     required init?(coder aDecoder: NSCoder) { fatalError() }
 
-    private lazy var downView: DownView = {
-        let url = Bundle(for: type(of: self)).url(forResource: "DownView", withExtension: "bundle")
-        let bundle = Bundle(url: url!)
-        let downView = try! DownView(
-            frame: .zero,
-            markdownString: "",
-            openLinksInBrowser: false,
-            templateBundle: bundle
-        )
-        downView.scrollView.showsHorizontalScrollIndicator = false
-        downView.scrollView.bounces = false
-        downView.navigationDelegate = self
-        return downView
+    private lazy var markdownView: MarkdownView = {
+        let markdownView = MarkdownView()
+        markdownView.isScrollEnabled = false
+        markdownView.onRendered = { [weak self] height in
+            guard let self = self else { return }
+            self.markdownView.snp.makeConstraints {
+                $0.height.equalTo(height + 48).priority(.medium)
+            }
+            self.delegate?.didFinishLoad(self)
+        }
+        markdownView.onTouchLink = { [weak self] request in
+            guard let self = self,
+                  let url = request.url,
+                  url.scheme == "https" || url.scheme == "http" else { 
+                return false
+            }
+            self.delegate?.touchedLink(self, link: url)
+            return false
+        }
+        return markdownView
     }()
 
     private func setupSubviews() {
-        contentView.addSubview(downView)
-        downView.snp.makeConstraints {
-            $0.height.equalTo(100)
+        contentView.addSubview(markdownView)
+        markdownView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-        }
-    }
-}
-
-extension ReadMeTableViewCell: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("document.readyState") { (complete, error) in
-            if complete != nil {
-                webView.evaluateJavaScript("document.body.scrollHeight") { [weak self] (height, error) in
-                    guard let self = self,
-                          let height = height as? CGFloat else {
-                        return
-                    }
-                    self.downView.snp.updateConstraints {
-                        $0.height.equalTo(height)
-                    }
-                    self.delegate?.didFinishLoad(self)
-                }
-            }
         }
     }
 }
