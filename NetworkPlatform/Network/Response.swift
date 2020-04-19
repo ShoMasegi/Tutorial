@@ -1,15 +1,15 @@
-import Foundation
+import Domain
 import Moya
 import RxSwift
 
-struct Response<T: Decodable> {
+public struct Response<T: Decodable> {
     let data: T
 
-    init(data: T) {
+    public init(data: T) {
         self.data = data
     }
 
-    init(response: Moya.Response) throws {
+    public init(response: Moya.Response) throws {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -18,7 +18,7 @@ struct Response<T: Decodable> {
     }
 }
 
-struct ErrorResponse: Decodable {
+public struct ErrorResponse: Decodable {
     let message: String?
 
     init(message: String?) {
@@ -35,7 +35,7 @@ struct ErrorResponse: Decodable {
 
 extension ObservableType where Element == Moya.Response {
 
-    func map<T: Decodable>(to: T.Type) -> Observable<Response<T>> {
+    public func map<T: Decodable>(to: T.Type) -> Observable<Response<T>> {
         return flatMap { response -> Observable<Response<T>> in
             do {
                 let res = try Response<T>.init(response: response)
@@ -46,7 +46,7 @@ extension ObservableType where Element == Moya.Response {
         }
     }
 
-    func filterAPIError() -> Observable<Element> {
+    public func filterAPIError() -> Observable<Element> {
         return flatMap({ response -> Observable<Element> in
             switch response.statusCode {
             case 200...299:

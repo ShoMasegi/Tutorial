@@ -69,5 +69,4 @@ extension API: TargetType {
     public var headers: [String: String]? {
         return [:]
     }
-
 }
