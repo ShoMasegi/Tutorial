@@ -73,7 +73,7 @@
 		D1458886244C85010000823A /* EventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1458885244C85010000823A /* EventsUseCase.swift */; };
 		D1458888244C85460000823A /* SplashUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1458887244C85460000823A /* SplashUseCase.swift */; };
 		D145888A244C85580000823A /* RepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1458889244C85580000823A /* RepositoryUseCase.swift */; };
-		D145888C244C85670000823A /* NetworkUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145888B244C85670000823A /* NetworkUseCaseProvider.swift */; };
+		D145888C244C85670000823A /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145888B244C85670000823A /* UseCaseProvider.swift */; };
 		D145888D244C8A030000823A /* NetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1458865244C7CA40000823A /* NetworkPlatform.framework */; };
 		D1B9882B244B660700D84AF0 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B9882A244B660700D84AF0 /* MarkdownView.framework */; };
 		D1B98837244C6AAA00D84AF0 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = D1B98835244C6AAA00D84AF0 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -209,7 +209,7 @@
 		D1458885244C85010000823A /* EventsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUseCase.swift; sourceTree = "<group>"; };
 		D1458887244C85460000823A /* SplashUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUseCase.swift; sourceTree = "<group>"; };
 		D1458889244C85580000823A /* RepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryUseCase.swift; sourceTree = "<group>"; };
-		D145888B244C85670000823A /* NetworkUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCaseProvider.swift; sourceTree = "<group>"; };
+		D145888B244C85670000823A /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		D1B9882A244B660700D84AF0 /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
 		D1B98833244C6AAA00D84AF0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B98835244C6AAA00D84AF0 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
@@ -475,7 +475,7 @@
 				D1458885244C85010000823A /* EventsUseCase.swift */,
 				D1458887244C85460000823A /* SplashUseCase.swift */,
 				D1458889244C85580000823A /* RepositoryUseCase.swift */,
-				D145888B244C85670000823A /* NetworkUseCaseProvider.swift */,
+				D145888B244C85670000823A /* UseCaseProvider.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -767,7 +767,7 @@
 				D145885F244C70FC0000823A /* ReadMe.swift in Sources */,
 				D145885C244C70E90000823A /* Event.swift in Sources */,
 				D1458876244C7D930000823A /* APIError.swift in Sources */,
-				D145888C244C85670000823A /* NetworkUseCaseProvider.swift in Sources */,
+				D145888C244C85670000823A /* UseCaseProvider.swift in Sources */,
 				D145885E244C70F80000823A /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

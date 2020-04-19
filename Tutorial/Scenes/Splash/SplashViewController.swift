@@ -1,11 +1,13 @@
 import UIKit
 import SnapKit
+import Domain
 
 class SplashViewController: UIViewController {
     private let viewModel: SplashViewModel
 
     init() {
-        viewModel = SplashViewModel(useCase: Application.shared.defaultUseCaseProvider().makeSplashUseCase())
+        let useCaseProvider = Application.shared.defaultUseCaseProvider()
+        viewModel = SplashViewModel(useCase: useCaseProvider.makeSplashUseCase())
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -48,7 +50,7 @@ class SplashViewController: UIViewController {
     private func prepare() {
         viewModel.getEvens(onSuccess: { _ in
             let navigationController = UINavigationController()
-            let provider = UseCaseProvider(networking: Networking.newDefaultNetworking())
+            let provider = Application.shared.defaultUseCaseProvider()
             let navigator = MainNavigator(provider: provider, navigationController: navigationController)
             Application.shared.rootViewController.animateFadeTransition(to: navigationController) {
                 navigator.toRoot()

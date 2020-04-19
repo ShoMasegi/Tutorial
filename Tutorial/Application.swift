@@ -1,12 +1,12 @@
-import Foundation
+import Domain
 import UIKit
+import NetworkPlatform
 
 final class Application {
     static let shared = Application()
     let rootViewController: RootViewController = RootViewController()
     
-    private init() {
-    }
+    private init() {}
     
     func setup(in window: UIWindow) {
         rootViewController.current = SplashViewController()
@@ -14,7 +14,11 @@ final class Application {
         window.makeKeyAndVisible()
     }
 
-    func defaultUseCaseProvider() -> UseCaseProvider {
+    func defaultUseCaseProvider() -> Domain.UseCaseProvider {
+        return DefaultUseCaseProvider(networkUseCaseProvider: defaultNetworkUseCaseProvider())
+    }
+
+    private func defaultNetworkUseCaseProvider() -> Domain.NetworkUseCaseProvider {
         let networking = Networking.newDefaultNetworking(responseFilterClosure: { statusCode in
             switch statusCode {
             case 400:
@@ -33,6 +37,6 @@ final class Application {
             default: return true
             }
         })
-        return UseCaseProvider(networking: networking)
+        return NetworkPlatform.UseCaseProvider(networking: networking)
     }
 }
