@@ -1,4 +1,4 @@
-import Foundation
+import Domain
 import Moya
 import RxCocoa
 import RxSwift
@@ -14,16 +14,13 @@ final class SplashViewModel {
     // ログイン処理とか...
     func getEvens(onSuccess: @escaping ([Event]) -> Void, onError: @escaping (String) -> Void) {
         useCase.events(page: 1)
-        .observeOn(MainScheduler.instance)
-        .subscribe(onNext: { response in
-            onSuccess(response.data)
-        }, onError: { error in
-            if let apiError = error as? APIError {
-                onError(apiError.message)
-            } else {
+            .observeOn(MainScheduler.instance)
+            .map { events in events.map { event in Event(with: event) } }
+            .subscribe(onNext: { events in
+                onSuccess(events)
+            }, onError: { error in
                 onError(error.localizedDescription)
-            }
-        })
-        .disposed(by: bag)
+            })
+            .disposed(by: bag)
     }
 }

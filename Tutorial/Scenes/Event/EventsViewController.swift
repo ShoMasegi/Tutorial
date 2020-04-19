@@ -60,12 +60,12 @@ class EventsViewController: UIViewController {
         let initTrigger = trigger.asDriver(onErrorJustReturn: ())
         let refreshTrigger = refreshControl.rx.controlEvent(.valueChanged).asDriver()
         let loadNextPageTrigger = tableView.rx.reachedBottom
-                .asDriverOnErrorJustComplete()
+            .asDriverOnErrorJustComplete()
         let input = EventsViewModel.Input(
-                initTrigger:  initTrigger,
-                refreshTrigger: refreshTrigger,
-                loadNextPageTrigger: loadNextPageTrigger,
-                modelSelected: tableView.rx.modelSelected(Event.self).asDriver()
+            initTrigger:  initTrigger,
+            refreshTrigger: refreshTrigger,
+            loadNextPageTrigger: loadNextPageTrigger,
+            modelSelected: tableView.rx.modelSelected(Event.self).asDriver()
         )
         let output = viewModel.transform(input: input)
         output.events.drive(tableView.rx.items(cellIdentifier: EventTableViewCell.reuseIdentifier, cellType: EventTableViewCell.self)) { _, element, cell in
@@ -81,11 +81,7 @@ class EventsViewController: UIViewController {
         }).disposed(by: bag)
         output.isNavigated.drive().disposed(by: bag)
         output.error.drive(onNext: { error in
-            if let apiError = error as? APIError {
-                self.presentAlert(title: "Error", message: apiError.message)
-            } else {
-                print(error.localizedDescription)
-            }
+            self.presentAlert(title: "Error", message: error.localizedDescription)
         }).disposed(by: bag)
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let `self` = self else { return }

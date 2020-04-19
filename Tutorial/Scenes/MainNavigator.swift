@@ -1,7 +1,7 @@
 import UIKit
+import Domain
 
 final class MainNavigator {
-
     private let provider: UseCaseProvider
     private weak var navigationController: UINavigationController?
 

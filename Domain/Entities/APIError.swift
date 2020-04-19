@@ -3,7 +3,10 @@ import Foundation
 public enum APIError: Error {
     case server(statusCode: Int, message: String?)
     case semantic(message: String?)
-    public var message: String {
+}
+
+extension APIError: LocalizedError {
+    public var errorDescription: String? {
         switch self {
         case .server(let statusCode, let message):
             if let message = message {
