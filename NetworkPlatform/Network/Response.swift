@@ -2,14 +2,14 @@ import Domain
 import Moya
 import RxSwift
 
-public struct Response<T: Decodable> {
+struct Response<T: Decodable> {
     let data: T
 
-    public init(data: T) {
+    init(data: T) {
         self.data = data
     }
 
-    public init(response: Moya.Response) throws {
+    init(response: Moya.Response) throws {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -18,7 +18,7 @@ public struct Response<T: Decodable> {
     }
 }
 
-public struct ErrorResponse: Decodable {
+struct ErrorResponse: Decodable {
     let message: String?
 
     init(message: String?) {
@@ -34,12 +34,11 @@ public struct ErrorResponse: Decodable {
 }
 
 extension ObservableType where Element == Moya.Response {
-
-    public func map<T: Decodable>(to: T.Type) -> Observable<Response<T>> {
-        return flatMap { response -> Observable<Response<T>> in
+    public func map<T: Decodable>(to: T.Type) -> Observable<T> {
+        return flatMap { response -> Observable<T> in
             do {
                 let res = try Response<T>.init(response: response)
-                return Observable.just(res)
+                return Observable.just(res.data)
             } catch let error {
                 return Observable.error(error)
             }

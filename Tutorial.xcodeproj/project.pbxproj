@@ -66,6 +66,10 @@
 		D145887F244C7EBA0000823A /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D27256213A6CA300AF0ACE /* UseCaseProvider.swift */; };
 		D1458880244C7F1C0000823A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B98833244C6AAA00D84AF0 /* Domain.framework */; };
 		D1458881244C7F1C0000823A /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1B98833244C6AAA00D84AF0 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1458886244C85010000823A /* EventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1458885244C85010000823A /* EventsUseCase.swift */; };
+		D1458888244C85460000823A /* SplashUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1458887244C85460000823A /* SplashUseCase.swift */; };
+		D145888A244C85580000823A /* RepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1458889244C85580000823A /* RepositoryUseCase.swift */; };
+		D145888C244C85670000823A /* NetworkUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145888B244C85670000823A /* NetworkUseCaseProvider.swift */; };
 		D145888D244C8A030000823A /* NetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1458865244C7CA40000823A /* NetworkPlatform.framework */; };
 		D1B9882B244B660700D84AF0 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B9882A244B660700D84AF0 /* MarkdownView.framework */; };
 		D1B98837244C6AAA00D84AF0 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = D1B98835244C6AAA00D84AF0 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -194,6 +198,10 @@
 		D1458865244C7CA40000823A /* NetworkPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1458867244C7CA40000823A /* NetworkPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkPlatform.h; sourceTree = "<group>"; };
 		D1458868244C7CA40000823A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1458885244C85010000823A /* EventsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUseCase.swift; sourceTree = "<group>"; };
+		D1458887244C85460000823A /* SplashUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUseCase.swift; sourceTree = "<group>"; };
+		D1458889244C85580000823A /* RepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryUseCase.swift; sourceTree = "<group>"; };
+		D145888B244C85670000823A /* NetworkUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCaseProvider.swift; sourceTree = "<group>"; };
 		D1B9882A244B660700D84AF0 /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
 		D1B98833244C6AAA00D84AF0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B98835244C6AAA00D84AF0 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
@@ -441,9 +449,21 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		D1458884244C83F70000823A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				D1458885244C85010000823A /* EventsUseCase.swift */,
+				D1458887244C85460000823A /* SplashUseCase.swift */,
+				D1458889244C85580000823A /* RepositoryUseCase.swift */,
+				D145888B244C85670000823A /* NetworkUseCaseProvider.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		D1B98834244C6AAA00D84AF0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D1458884244C83F70000823A /* UseCase */,
 				D1B98840244C6BF500D84AF0 /* Entities */,
 				D1B98835244C6AAA00D84AF0 /* Domain.h */,
 				D1B98836244C6AAA00D84AF0 /* Info.plist */,
@@ -716,10 +736,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1458886244C85010000823A /* EventsUseCase.swift in Sources */,
 				D145885D244C70F50000823A /* User.swift in Sources */,
 				D145885F244C70FC0000823A /* Readme.swift in Sources */,
+				D1458888244C85460000823A /* SplashUseCase.swift in Sources */,
+				D145888A244C85580000823A /* RepositoryUseCase.swift in Sources */,
 				D145885C244C70E90000823A /* Event.swift in Sources */,
 				D1458876244C7D930000823A /* APIError.swift in Sources */,
+				D145888C244C85670000823A /* NetworkUseCaseProvider.swift in Sources */,
 				D145885E244C70F80000823A /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

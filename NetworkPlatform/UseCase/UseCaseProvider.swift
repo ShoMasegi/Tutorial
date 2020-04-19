@@ -1,25 +1,21 @@
-import Foundation
+import Domain
 
-public final class UseCaseProvider {
+public final class UseCaseProvider: Domain.NetworkUseCaseProvider {
     private let networkProvider: Networking
 
-    init(networking: Networking) {
+    public init(networking: Networking = Networking.newDefaultNetworking()) {
         networkProvider = networking
     }
 
-    init() {
-        networkProvider = Networking.newDefaultNetworking()
-    }
-
-    func makeSplashUseCase() -> SplashUseCase {
+    public func makeSplashUseCase() -> Domain.SplashUseCase {
         return SplashUseCase(network: networkProvider)
     }
 
-    func makeEventsUseCase() -> EventsUseCase {
+    public func makeEventsUseCase() -> Domain.EventsUseCase {
         return  EventsUseCase(network: networkProvider)
     }
 
-    func makeRepositoryUseCase() -> RepositoryUseCase {
+    public func makeRepositoryUseCase() -> Domain.RepositoryUseCase {
         return RepositoryUseCase(network: networkProvider)
     }
 }
