@@ -1,3 +1,4 @@
+import Foundation
 import Moya
 import RxSwift
 import RxMoya
@@ -12,12 +13,12 @@ public final class Provider<Target> where Target: Moya.TargetType {
          trackInflights: Bool = false
     ) {
         provider = MoyaProvider(
-                endpointClosure: endpointClosure,
-                requestClosure: requestClosure,
-                stubClosure: stubClosure,
-                session: session,
-                plugins: plugins,
-                trackInflights: trackInflights
+            endpointClosure: endpointClosure,
+            requestClosure: requestClosure,
+            stubClosure: stubClosure,
+            session: session,
+            plugins: plugins,
+            trackInflights: trackInflights
         )
     }
 
@@ -46,9 +47,9 @@ public struct Networking: NetworkingType {
 extension Networking {
     public func request(_ target: API) -> Observable<Moya.Response> {
         return provider.request(target)
-        .filter({ response -> Bool in
-            self.responseFilterClosure?(response.statusCode) ?? true
-        })
+            .filter({ response -> Bool in
+                self.responseFilterClosure?(response.statusCode) ?? true
+            })
     }
     public func requestNoFilter(_ target: API) -> Observable<Moya.Response> {
         return provider.request(target)
@@ -90,8 +91,8 @@ extension NetworkingType {
 
 private func newProvider<T>(_ plugins: [PluginType]) -> Provider<T> {
     return Provider<T>(
-            requestClosure:  Networking.requestClosure(),
-            stubClosure: MoyaProvider.neverStub,
-            plugins: plugins
+        requestClosure:  Networking.requestClosure(),
+        stubClosure: MoyaProvider.neverStub,
+        plugins: plugins
     )
 }

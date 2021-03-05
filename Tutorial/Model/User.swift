@@ -1,4 +1,5 @@
 import Domain
+import Foundation
 
 final class User {
     let id: Int64

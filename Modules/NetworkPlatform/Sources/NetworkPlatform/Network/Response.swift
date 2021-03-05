@@ -1,3 +1,4 @@
+import Foundation
 import Domain
 import Moya
 import RxSwift

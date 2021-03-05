@@ -1,4 +1,5 @@
 import Domain
+import Foundation
 
 final class ReadMe {
     let name: String

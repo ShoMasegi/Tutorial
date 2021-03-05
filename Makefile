@@ -4,11 +4,9 @@ bootstrap: install
 	brew update
 
 # installation
-install: bundle_install pod_install carthage_update
+install: bundle_install pod_install
 pod_install:
 	bundle exec pod install
-carthage_update:
-	carthage update --platform iOS --cache-builds
 bundle_install:
 	bundle install --path=vendor/bundle --jobs 4 --retry 3
 

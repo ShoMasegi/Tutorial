@@ -1,5 +1,6 @@
-import Moya
 import Alamofire
+import Foundation
+import Moya
 
 public enum API {
     case event(page: Int)
