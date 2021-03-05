@@ -1,7 +1,7 @@
 # Tutorial
 
-![](https://img.shields.io/badge/Xcode-10.2%2B-blue.svg)
-![](https://img.shields.io/badge/iOS-10.0%2B-blue.svg)
+![](https://img.shields.io/badge/Xcode-12.0%2B-blue.svg)
+![](https://img.shields.io/badge/iOS-13.0%2B-blue.svg)
 ![](https://img.shields.io/badge/Swift-5.0%2B-orange.svg)
 
 Github client app (no authorization).
@@ -10,10 +10,11 @@ Learn how to layout without storyboard and xib.
 ## Feature
 - no use .storyboard (and .xib) file
 - MVVM architecture
+- Modularized by Swift Package Manager
 
 ## Setup
 
-1. Download the Xcode 10.2 release.
+1. Download the Xcode 12.0+ release.
 2. Clone this repository.
 3. Run `make bootstrap` to install tools and dependencies.
 
@@ -27,7 +28,7 @@ Learn how to layout without storyboard and xib.
 - [ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift)
 - [kean/Nuke](https://github.com/kean/Nuke)
 - [SnapKit/SnapKit](https://github.com/SnapKit/SnapKit)
-- [iwasrobbed/Down](https://github.com/iwasrobbed/Down)
+- [keitaoouchi/MarkdownView](https://github.com/keitaoouchi/MarkdownView)
 
 ## Screen
 |Splash|Refresh|repository|
