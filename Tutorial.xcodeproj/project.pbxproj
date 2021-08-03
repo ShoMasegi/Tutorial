@@ -87,6 +87,7 @@
 		36EDE4BA2143A8D700A07285 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		36EDE4BC2144234700A07285 /* RepositoryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoCell.swift; sourceTree = "<group>"; };
 		36EDE4BE214446C200A07285 /* ImageLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelCell.swift; sourceTree = "<group>"; };
+		A799443D2679C5AF0081CAEF /* Tutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tutorial.entitlements; sourceTree = "<group>"; };
 		BE6FC0CAC3FEEF88459F1A7D /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BE6FC2E734BF855BF0D0D9EF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BE6FC37BC1D4C22A277CA7D0 /* ReadMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
@@ -237,6 +238,7 @@
 		36EC1E7221382027007CE7E3 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				A799443D2679C5AF0081CAEF /* Tutorial.entitlements */,
 				36EC1E96213830D1007CE7E3 /* Application.swift */,
 				36EC1E7321382027007CE7E3 /* AppDelegate.swift */,
 				36EC1E7F21382029007CE7E3 /* Info.plist */,
@@ -582,8 +584,9 @@
 			baseConfigurationReference = 17C3D31EDE09E75A3E3FDB9F /* Pods-Tutorial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tutorial/Tutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JGQ4YAN3V;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tutorial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -603,8 +606,9 @@
 			baseConfigurationReference = BEC8DDBCE8DF1C7E5492B480 /* Pods-Tutorial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tutorial/Tutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JGQ4YAN3V;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tutorial/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
